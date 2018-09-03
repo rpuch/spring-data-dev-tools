@@ -20,7 +20,7 @@ import jmh.mbr.core.ResultsWriterFactory;
 
 /**
  * {@link ResultsWriterFactory} plugin via {@link java.util.ServiceLoader}.
- * 
+ *
  * @author Mark Paluch
  */
 public class MicrobenchmarkResultsWriterFactory implements ResultsWriterFactory {
@@ -34,6 +34,10 @@ public class MicrobenchmarkResultsWriterFactory implements ResultsWriterFactory 
 
 		if (uri.startsWith("mongo")) {
 			return new MongoResultsWriter(uri);
+		}
+
+		if (uri.startsWith("elastic")) {
+			return new ElasticResultsWriter(uri);
 		}
 
 		return null;
