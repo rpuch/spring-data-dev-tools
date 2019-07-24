@@ -1,0 +1,25 @@
+= Benchmark model
+
+[plantuml, book, svg]
+....
+class Book {
+  author : String
+  title : String
+  pages : int
+}
+....
+
+[plantuml, order, svg]
+....
+
+class Order {
+  date : Instant
+}
+
+class LineItem {
+  amount : int
+  description : String
+}
+
+Order "1" *-- "0..n" LineItem
+....

@@ -36,7 +36,7 @@ public class JdbcFixture {
 
 	private final @Getter JdbcOperations operations;
 	private final @Getter RowMapper<Book> bookMapper;
-	private final List<Book> books = new ArrayList<>();
+	private final @Getter List<Book> books = new ArrayList<>();
 
 	private final @Getter ConfigurableApplicationContext context;
 
